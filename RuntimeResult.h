@@ -6,6 +6,7 @@
 
 struct RuntimeResult
 {
+    // TODO see if can change value from Number to Node*
     Number value;
     std::shared_ptr<Error> error;
 

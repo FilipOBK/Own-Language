@@ -1,3 +1,4 @@
+// TODO Hash Token class
 // #pragma once
 // #include <unordered_map>
 // #include <string>
