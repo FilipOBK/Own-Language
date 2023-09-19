@@ -76,3 +76,11 @@ std::ostream& operator<<(std::ostream& os, const Token& token)
     os << token.type << ":" << token.val;
     return os;
 }
+
+size_t TokenHasher::operator()(const Token &tok) const
+{
+    size_t type_hash = std::hash<int>()(static_cast<int>(tok.type));
+    size_t val_hash = std::hash<std::string>()(tok.val);
+
+    return type_hash ^ (val_hash << 1);
+}

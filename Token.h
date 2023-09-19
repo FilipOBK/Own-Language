@@ -39,3 +39,8 @@ public:
 
 std::ostream& operator<<(std::ostream& os, const TT& tt);
 std::ostream& operator<<(std::ostream& os, const Token& token);
+
+struct TokenHasher
+{
+    size_t operator()(const Token& tok) const;
+};
