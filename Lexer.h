@@ -7,10 +7,6 @@
 #include "Errors.h"
 #include "Position.h"
 
-const std::vector<std::string> KEYWORDS {
-  "VAR"  
-};
-
 class Lexer
 {
 public:

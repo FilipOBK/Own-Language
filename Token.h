@@ -21,6 +21,12 @@ enum class TT
     EMPTY
 };
 
+const std::vector<std::string> KEYWORDS {
+  "VAR"  
+};
+
+
+
 class Token
 {
 public:
