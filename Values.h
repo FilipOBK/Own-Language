@@ -9,7 +9,7 @@
 
 struct Type
 {
-    
+    virtual void print(std::ostream& os) = 0;
 };
 
 struct NumberResult;
@@ -33,6 +33,8 @@ struct Number : public Type
     NumberResult Multed_by(Number other);
     NumberResult Dived_by(Number other);
     NumberResult Power_of(Number other);
+
+    void print(std::ostream& os) override;
 };
 
 struct NumberResult
@@ -43,4 +45,4 @@ struct NumberResult
     NumberResult(Number _val, std::shared_ptr<Error> _error);
 };
 
-std::ostream& operator<<(std::ostream& os, const Number& num);
+std::ostream& operator<<(std::ostream& os, Type& num);
