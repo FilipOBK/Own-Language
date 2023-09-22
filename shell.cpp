@@ -5,7 +5,7 @@
 #include "Interpreter.h"
 #include "Values.h"
 
-std::variant<Number, std::shared_ptr<Error>> run(std::string text)
+std::variant<std::shared_ptr<Type>, std::shared_ptr<Error>> run(std::string text)
 {
     // * Generate tokens
     Lexer lexer(text, "stdin");
@@ -46,8 +46,8 @@ int main()
         }
         else
         {
-            Number res = std::get<0>(result);
-            std::cout << res << std::endl;
+            Type* res = std::get<0>(result).get();
+            std::cout << *res << std::endl;
         }
     }
 }

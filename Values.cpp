@@ -192,12 +192,12 @@ NumberResult Number::Power_of(Number other)
 
 void Number::print(std::ostream &os)
 {
-    os << "Number< ";
+    os << "Number<";
     if(value.index() == 0)
         os << "INT, " << std::get<0>(value);
     else
         os << "FLOAT, " << std::get<1>(value);
-    os << " >";
+    os << ">";
 }
 
 std::ostream &operator<<(std::ostream &os, Type &num)

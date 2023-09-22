@@ -6,13 +6,14 @@
 
 struct RuntimeResult
 {
-    // TODO see if can change value from Number to Node*
-    Number value;
+    // TODO check that the Type pointer works
+    std::shared_ptr<Type> value;
     std::shared_ptr<Error> error;
 
     RuntimeResult();
 
     Number Register(RuntimeResult res);
+    RuntimeResult Success(Type* _value);
     RuntimeResult Success(Number _value);
     RuntimeResult Failure(std::shared_ptr<Error> _error);
 };
