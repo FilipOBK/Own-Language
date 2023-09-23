@@ -7,6 +7,7 @@
 struct RuntimeResult
 {
     // TODO check that the Type pointer works
+    // ? Might be able to alter if SymbolTable is changed
     std::shared_ptr<Type> value;
     std::shared_ptr<Error> error;
 

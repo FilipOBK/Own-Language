@@ -9,7 +9,7 @@ struct Context
     std::string displayName;
     std::shared_ptr<Context> parent;
     Position parentEntryPos;
-    // SymbolTable symbols;
+    SymbolTable symbols;
 
     Context(const std::string _displayName, std::shared_ptr<Context> const _parent, const Position _parEntryPos);
     Context(const std::string _displayName, std::shared_ptr<Context> const _parent);
