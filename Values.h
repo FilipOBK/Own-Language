@@ -3,14 +3,11 @@
 #include <iostream>
 #include <memory>
 #include <cmath>
+
+#include "Type.h"
 #include "Position.h"
 #include "Errors.h"
 #include "Context.h"
-
-struct Type
-{
-    virtual void print(std::ostream& os) = 0;
-};
 
 struct NumberResult;
 

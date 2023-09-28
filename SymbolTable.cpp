@@ -6,12 +6,12 @@ SymbolTable::SymbolTable()
 
 }
 
-Node* SymbolTable::get(Token name)
+std::shared_ptr<Type> SymbolTable::get(Token name)
 {
-    Node* value = nullptr;
+    std::shared_ptr<Type> value = nullptr;
     try
     {
-        value = symbols.at(name).get();
+        value = symbols.at(name);
     }
     catch(const std::exception& e) {}
     
@@ -19,7 +19,7 @@ Node* SymbolTable::get(Token name)
     return value;
 }
 
-void SymbolTable::set(Token name, std::shared_ptr<Node> value)
+void SymbolTable::set(Token name, std::shared_ptr<Type> value)
 {
     symbols[name] = value;
 }

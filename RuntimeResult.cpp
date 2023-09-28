@@ -5,12 +5,10 @@ RuntimeResult::RuntimeResult()
 {
 }
 
-Number RuntimeResult::Register(RuntimeResult res)
+std::shared_ptr<Type> RuntimeResult::Register(RuntimeResult res)
 {
     if(res.error) error = res.error;
-    if(auto num = dynamic_cast<Number*>(res.value.get()))
-        return *num;
-    return Number();
+    return res.value;
 }
 
 RuntimeResult RuntimeResult::Success(Type* _value)

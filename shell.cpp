@@ -17,8 +17,8 @@ std::variant<std::shared_ptr<Type>, std::shared_ptr<Error>> run(std::string text
     // * Generate AST
     Parser parser(tokens);
     auto ast = parser.Parse();
-
     if(ast.error) return ast.error;
+    std::cout << "AST: [" << *ast.node.get() << "]\n";
 
     // * Run program
     Interpreter interpreter;
